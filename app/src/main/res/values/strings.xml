@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Calculate route and time</string>
+    <string name="grant_gps">Grant GPS Permission</string>
+    <string name="turnon_text">Turn ON GPS</string>
+    <string name="turnoff_gps">Turn OFF GPS</string>
+    <string name="routestart_text">Start the Route</string>
+    <string name="finishroute_text">Finish the Route</string>
+    <string name="travelled_string">Travelled Distance</string>
+    <string name="proximity_hint">What do you want to find?</string>
+    <string name="no_gps_no_app">This app needs GPS to work.</string>
+</resources>

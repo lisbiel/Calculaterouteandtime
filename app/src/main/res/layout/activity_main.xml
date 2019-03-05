@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="6"
+    android:columnCount="2"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/grantgpsbutton"
+        android:layout_width="match_parent"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal"
+        android:padding="@dimen/total_padding"
+        android:text="@string/grant_gps" />
+
+    <Button
+        android:id="@+id/ongpsbutton"
+        android:layout_gravity="fill_horizontal"
+        android:padding="@dimen/total_padding"
+        android:text="@string/turnon_text" />
+
+    <Button
+        android:id="@+id/offgpsbutton"
+        android:layout_gravity="fill_horizontal"
+        android:padding="@dimen/total_padding"
+        android:text="@string/turnoff_gps" />
+
+    <Button
+        android:id="@+id/initroutebutton"
+        android:layout_gravity="fill_horizontal"
+        android:padding="@dimen/total_padding"
+        android:text="@string/routestart_text" />
+
+    <Button
+        android:id="@+id/finishroutebutton"
+        android:layout_gravity="fill_horizontal"
+        android:padding="@dimen/total_padding"
+        android:text="@string/finishroute_text" />
+
+    <TextView
+        android:id="@+id/travelledDistText"
+        android:layout_gravity="fill_horizontal"
+        android:padding="@dimen/total_padding"
+        android:text="@string/travelled_string"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size" />
+
+    <TextView
+        android:id="@+id/travelledDIstLabel"
+        android:layout_row="0"
+        android:layout_gravity="fill_horizontal"
+        android:padding="@dimen/total_padding"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size" />
+
+    <TextView
+        android:id="@+id/travelledTimeText"
+        android:layout_gravity="fill_horizontal"
+        android:padding="@dimen/total_padding"
+        android:text="@string/travelled_string"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size" />
+
+    <Chronometer
+        android:id="@+id/chronometerExample"
+        android:textSize="25dp"
+        android:layout_gravity="fill_horizontal"
+        android:textColor="@color/text_color"
+        android:gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/proximityEditText"
+        android:layout_width="181dp"
+        android:layout_gravity="fill_horizontal"
+        android:hint="@string/proximity_hint"
+        android:inputType="textMultiLine|textLongMessage"
+        android:padding="@dimen/total_padding" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="45dp"
+        android:layout_height="43dp"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_search_category_default" />
+
+</GridLayout>
