@@ -147,10 +147,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 );
             }
         } else if (v == ongpsbutton) {
-            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+            if (ActivityCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED) {
+                if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                    Toast.makeText(this,
+                            getString(
+                                    R.string.gps_already_on
+                            ),
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                }
+            } else {
+                Toast.makeText(this,
+                        getString(
+                                R.string.no_gps_permission
+                        ),
+                        Toast.LENGTH_SHORT).show();
+            }
+
         } else if ( v == offgpsbutton ) {
-            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+            if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+            } else {
+                Toast.makeText(this,
+                getString(
+                        R.string.gps_already_off
+                ),
+                        Toast.LENGTH_SHORT).show();
+            }
         } else if ( v == initroutebutton ) {
+            if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                 locationManager.requestLocationUpdates(
                         LocationManager.GPS_PROVIDER,
                         2000,
@@ -161,9 +190,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 long systemCurrTime = SystemClock.elapsedRealtime();
                 chronometer.setBase(systemCurrTime);
                 chronometer.start();
+            } else {
+                Toast.makeText(this,
+                        getString(
+                        R.string.gps_off
+                ),
+                        Toast.LENGTH_SHORT).show();
+            }
         } else if ( v == finishroutebutton ) {
             locationManager.removeUpdates(locationListener);
             chronometer.stop();
+            distPercorrida = 0f;
 
         } else if ( v == fab ) {
             Uri uri =

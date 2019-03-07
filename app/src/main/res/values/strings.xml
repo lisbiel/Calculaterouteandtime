@@ -8,4 +8,8 @@
     <string name="travelled_string">Travelled Distance</string>
     <string name="proximity_hint">What do you want to find?</string>
     <string name="no_gps_no_app">This app needs GPS to work.</string>
+    <string name="gps_already_on">GPS already enabled.</string>
+    <string name="gps_already_off">GPS already disabled.</string>
+    <string name="gps_off">The GPS is off, please turn it on!</string>
+    <string name="no_gps_permission">GPS permission needed.</string>
 </resources>
